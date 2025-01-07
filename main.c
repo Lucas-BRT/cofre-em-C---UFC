@@ -8,7 +8,7 @@
 #define EXTRA_BUFFER_SIZE 100 // quantidade de caracteres extras para evitar buffer overflow
 
 int PASSWORD[PASSWORD_SIZE] = {4, 2, 9};
-const int MAX_INPUT_SIZE = MAX_DIGIT_AMOUNT + EXTRA_BUFFER_SIZE + 1; // quantidade máxima de caracteres que o input pode ter
+const int MAX_INPUT_SIZE = MAX_DIGIT_AMOUNT + EXTRA_BUFFER_SIZE + 1; // quantidade máxima de caracteres que o input pode ter + 1 para o caracter de termino de string
 
 void get_valid_user_input(char *buffer, int max_input_size);
 void load_password(char *buffer, int *input_password_buffer, int password_size);
