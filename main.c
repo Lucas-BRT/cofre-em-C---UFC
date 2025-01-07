@@ -54,9 +54,18 @@ bool have_right_digits_amount(char *input, int input_size, int max_allowed_digit
 
     for (int i = 0; i < input_size; i++)
     {
+        if (input[i] == '\0' || input[i] == '\n')
+        {
+            break;
+        }
+
         if (isdigit(input[i]))
         {
             digit_counter++;
+        }
+        else if (input[i] != ' ')
+        {
+            return false;
         }
     }
 
