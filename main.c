@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <stdlib.h>
 #include <stdbool.h>
 #include <ctype.h>
 
@@ -21,7 +20,7 @@ int main()
     int input_password[PASSWORD_SIZE];
     bool is_safe_opened = false;
 
-    do 
+    do
     {
         get_valid_user_input(input, MAX_INPUT_SIZE); // recebe e garante que o input é válido
 
@@ -33,7 +32,7 @@ int main()
         }
 
         handle_incorrect_password(input_password, PASSWORD, PASSWORD_SIZE);
-        
+
     }
     while (!is_safe_opened);
 
@@ -84,7 +83,7 @@ void get_valid_user_input(char *buffer, int max_input_size)
 
         if (!is_valid_input)
         {
-            printf("por favor, digite 3 digitos entre 0 e 9. Exemplo '1 3 5'\n");
+            printf("por favor, digite 3 digitos entre 0 e 9. Exemplo: '1 3 5'\n");
         }
 
     } while (!is_valid_input);
@@ -115,7 +114,7 @@ bool is_correct_password(int *input_password, int *password, int password_size)
     bool is_correct_password = true;
 
     for (int i = 0; i < password_size; i++)
-    {   
+    {
         if (input_password[i] != password[i])
         {
             is_correct_password = false;
@@ -145,7 +144,7 @@ bool is_in_correct_position(int digit, int *password, int password_size, int pos
 }
 
 void handle_incorrect_password(int *input_password, int *password, int password_size) {
-    
+
     for (int i = 0; i < password_size; i++)
     {
         if (is_present_in_password(input_password[i], password, password_size))
@@ -154,12 +153,12 @@ void handle_incorrect_password(int *input_password, int *password, int password_
             {
                 printf("O dígito %d está correto e na posição %d.\n", input_password[i], i + 1);
             }
-            else 
+            else
             {
                 printf("O dígito %d está correto, mas na posição errada.\n", input_password[i]);
             }
         }
-        else 
+        else
         {
             printf("O dígito %d não faz parte da senha.\n", input_password[i]);
         }
